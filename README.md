@@ -11,12 +11,27 @@ This demonstrates use of search and constraint propagation.
 
 ### Code
 
-Code is broken down into few files, and the **board.py** is the mostim iportant of those. It holds all the logic within Board class.
-**game.py** is there simply to create and "run" the board.
+Code is broken down into 2 files:
 
-For an example of how to use the came, see **game.py**
+  * **board.py** where all the logic lives,
+  * **game.py** is just for board creation and has some usage examples.
+
+### Running the code
+
+See **game.py** for a few examples.
+
+
+```
+constraints = {'A1':{'right': 3, 'down': 3}, 'B2': None, 'B3': None, 'C2': None, 'C3': None}
+g = Game(size, constraints)
+solved = g.run()
+```
+
+If you look at the wikipedia page [explaining Kakuro](https://en.wikipedia.org/wiki/Kakuro) those constraints should be intuitive. It includes clues (sums of elements in the adjacent row or column) and "black" fields (fields that should not be filled; indicated with ```None```).
 
 ### TODO:
+
+  1. Create a more complex example and test. Perhaps we could replicate [this one](https://upload.wikimedia.org/wikipedia/commons/7/72/Kakuro_black_box_solution.svg)
 
   1. optimize traversing through options
 
@@ -32,6 +47,8 @@ For an example of how to use the came, see **game.py**
   1. Validate initial parameters - simple checks to see if the board is complete, if all the boxes are accounted for at the initialization etc.
 
   1. ... and finally see smaller TODOs in code
+
+  1. Board visualization - ideas what to use are welcome
 
 ### Environment
 
