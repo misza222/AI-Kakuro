@@ -17,7 +17,7 @@ class Board:
 
     def create_units(self, size, constraints):
         units = []
-        # go throught user provided constraints
+        # go throught user provided constraints and translate it into units with constraints attached to them
         for constraint_box in constraints.keys():
             if constraints[constraint_box]:
                 row, column = list(constraint_box)
